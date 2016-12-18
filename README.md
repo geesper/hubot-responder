@@ -16,4 +16,4 @@ Once initialized, visit: http://yourhubotaddress:8080/list to view a list of cur
 
 ## Installation
 
-Clone this repo into your hubot/node_modules directory. Be sure to run an npm install after doing this so that any required modules are downloaded. You will then need to add "hubot-responder" to your external-scripts.json file in order to enable it.
+Copy the contents of this repo into your hubot/node_modules directory. Be sure to run an npm install after doing this so that any required modules are downloaded. You will then need to add "hubot-responder" to your external-scripts.json file in order to enable it. Additionally, you will need to install the ejs package in hubot using npm install ejs --save in your hubot directory.
