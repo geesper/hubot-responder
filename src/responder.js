@@ -119,8 +119,10 @@ module.exports = function(robot) {
     try {
       rooms = robot.brain.get("hubot-responses-room-filters");
     } catch (error) {
-      rooms = {};
       console.log("hubot-responder error: " + error + ".");
+    }
+    if (rooms === null) {
+      rooms = { "whitelist" : ["NOT SET"], "blacklist" : ["NOT SET"] };
     }
     res.render('configuration', { title: 'Configuration', rooms, page: 'configuration' });
   });
@@ -142,7 +144,9 @@ module.exports = function(robot) {
     }
     value = { "blacklist" : blacklist_rooms, "whitelist" : whitelist_rooms };
     robot.brain.set("hubot-responses-room-filters", value);
-    res.end("Room list successfully updated.");
+    //res.send('Room list successfully updated.<meta http-equiv="refresh" content="1;url=/configuration" />');
+    rooms = robot.brain.get("hubot-responses-room-filters");
+    res.render('configuration', { title: 'Configuration', rooms, page: 'configuration', success: true });
   });
 
   robot.router.get("/create", function(req, res) {

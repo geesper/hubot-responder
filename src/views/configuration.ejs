@@ -1,5 +1,14 @@
 <% include header %>
 
+<% if (typeof success !== 'undefined') { %>
+<div class="panel panel-info saved">
+<div class="panel-heading">
+Changes successfully saved.
+</div>
+</div>
+<% } %>
+
+
 <form action="/configuration" method="post">
 <div class="form-group row">
   <label for="whitelist_rooms" class="col-xs-2 col-form-label">Room whitelist (comma delimited), * for all</label>
@@ -19,4 +28,12 @@
 </div>
 </form>
 
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+window.setTimeout(function() {
+  $(".saved").fadeTo(500, 0).slideUp(500, function(){
+      $(this).remove();
+  });
+}, 2000);
+</script>
 <% include footer %>
