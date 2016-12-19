@@ -1,15 +1,15 @@
 {
   "name": "hubot-responder",
-  "description": "A hubot script that does the things",
-  "version": "0.0.0",
-  "author": "/bin/sh: 1: git: not found </bin/sh: 1: git: not found>",
+  "description": "Hubot script that makes customizing simple responses available via a web front-end.",
+  "version": "0.0.1",
+  "author": "Mark Webb",
   "license": "MIT",
 
-  "keywords": ["hubot","hubot-scripts"],
+  "keywords": ["hubot","hubot-scripts", "responder", "hubot-responder"],
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-responder.git"
+    "url": "https://github.com/geesper/hubot-responder.git"
   },
 
   "bugs": {

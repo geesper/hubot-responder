@@ -42,6 +42,13 @@ function validate_value(value) {
 
 
 module.exports = function(robot) {
+
+    function setup_responder() {
+      robot.brain.set("hubot-responses", {  "messages" : [] });
+      robot.brain.set("hubot-responses-room-filters", { "whitelist" : ["*"], "blacklist" : ["GENERAL"] });
+    }
+
+
     robot.respond(/open the (.*) doors/i, function(msg){
       if (msg.match[1] == "pod bay") {
         msg.reply("I'm afraid I can't let you do that.");
@@ -103,13 +110,18 @@ module.exports = function(robot) {
       list = robot.brain.get("hubot-responses").messages;
     } catch (error) {
       list = {};
-      console.log("message-listner error: " + error + ".");
+      console.log("hubot-responder error: " + error + ".");
     }
     res.render('list', { title: 'List', messagelist: list, page: 'list' });
   });
 
   robot.router.get("/configuration", function(req, res) {
-    rooms = robot.brain.get("hubot-responses-room-filters");
+    try {
+      rooms = robot.brain.get("hubot-responses-room-filters");
+    } catch (error) {
+      rooms = {};
+      console.log("hubot-responder error: " + error + ".");
+    }
     res.render('configuration', { title: 'Configuration', rooms, page: 'configuration' });
   });
 
