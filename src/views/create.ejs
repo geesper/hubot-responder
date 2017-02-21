@@ -19,8 +19,11 @@
 </div>
 <div class="form-group row" id="message_value0">
   <label for="message_value0" class="col-xs-2 col-form-label">Response(s)</label>
-  <div class="col-xs-10">
+  <div class="col-xs-9">
     <input type="text" class="form-control" id="message_value0" name="message_value0" required>
+  </div>
+  <div class="col-xs-1">
+    <button id="b2" class="btn remove" type="button">Remove</button>
   </div>
 </div>
 
@@ -33,14 +36,28 @@
 <script>
 $(document).ready(function(){
     var next = 0;
-    $(".add-more").click(function(e){
+    $(".add-more").click(function(e) {
         e.preventDefault();
         var addto = "message_value" + next;
         if ($('input#' + addto).val().length > 0) {
             next = next + 1;
-            var newIn = '<div class="form-group row" id="message_value' + next + '"><label for="message_value' + next + '" class="col-xs-2 col-form-label"></label><div class="col-xs-10"><input type="text" class="form-control" id="message_value' + next + '" name="message_value' + next + '" required></div></div>';
+            var newIn = '<div class="form-group row" id="message_value' + next + '"><label for="message_value' + next + '" class="col-xs-2 col-form-label"></label><div class="col-xs-9"><input type="text" class="form-control" id="message_value' + next + '" name="message_value' + next + '" required></div><div class="col-xs-1"><button id="b2" class="btn remove" type="button">Remove</button></div></div>';
             $('div#' + addto).after(newIn);
         }
+      $("button").each(function() {
+        if (this.id == 'b2') {
+          $(this).click(remove_function);
+        }
+      });
+    });
+
+    var remove_function = function(e) {
+      e.preventDefault();
+      $(this).parent().parent().remove();
+    };
+
+    $( ".remove" ).each(function() {
+      $(this).click(remove_function);
     });
 });
 </script>
