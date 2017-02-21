@@ -4,6 +4,8 @@
 
 This module takes advantage of the built in express module in hubot to provide a couple of simple web pages where your users can add simple query/responses to hubot without doing any code. The purpose is simply to allow end-users to add *simple* responses, nothing with advanced logic. Additionally, there is a global whitelist/blacklist so that you can exclude/include these responses only where you want them. This way you can allow funny responses and memes to work in channels that make sense, and ensure they don't pop into channels designated for specific purposes.
 
+![screenshot](https://cloud.githubusercontent.com/assets/6954817/23183430/9c0a9966-f841-11e6-8bb3-9bc8f7bc342b.png)
+
 ## Requirements
 
 You will need to install hubot with a brain so that the entries you place in it are persistent. To date I've simply been using hubot-mongodb-brain, though any should work.
