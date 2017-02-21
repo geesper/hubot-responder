@@ -10,9 +10,9 @@ You will need to install hubot with a brain so that the entries you place in it 
 
 ## Additional Details
 
-Once this module is installed and running, visit http://yourhubotaddress:8080/setup to initialize the settings. Visiting this page again will reset everything to defaults. This will be adjusted in a future date to no longer be necessary.
+Once this module is installed and running, visit http://yourhubotaddress:8080/configuration and be sure to enter in at least one whitelist room so you can see your responses. 
 
-Once initialized, visit: http://yourhubotaddress:8080/list to view a list of current responses. You can also add and modify existing responses.
+You can then go to http://yourhubotaddress:8080/list to view a list of current responses. You can also add and modify existing responses.
 
 ## Installation
 
