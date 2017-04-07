@@ -1,4 +1,8 @@
 <% include header %>
+<div class="form-group row">
+<a href="/delete/<%= id %>" class="btn btn-danger" role="button">Delete This Entry</a>
+<input type="hidden" name="id" value="<%= id %>">
+</div>
 <form action="/create" method="post">
 <div class="form-group row"> 
   <label for="match_value" class="col-xs-2 col-form-label">Match</label>
@@ -88,4 +92,5 @@ $(document).ready(function(){
 <a href="/list" class="btn btn-default" role="button">Cancel</a>
 </div>
 </form>
+
 <% include footer %>

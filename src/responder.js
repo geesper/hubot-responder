@@ -151,6 +151,29 @@ module.exports = function(robot) {
   robot.router.get("/create", function(req, res) {
     res.render('create', { title: 'New Response', page: 'create' });
   });
+
+
+  robot.router.get("/delete/:id", function(req, res) {
+    id = req.params.id;
+    messages = robot.brain.get("hubot-responses").messages;
+    try {
+      message = messages[id];
+      res.render('delete', { title: 'Delete Response', message, id, page: 'Delete' });
+    } catch (error) {
+      return res.redirect('/list');
+    }
+  });
+
+  robot.router.post("/delete", function(req, res) {
+    if (req.body['id']) {
+      checks = robot.brain.get("hubot-responses").messages;
+      checks.splice(id, 1); 
+      return res.redirect('/list');
+    } else {
+      res.end("Could not find item to delete!");
+    }
+  });
+
   
   robot.router.post("/create", function(req, res) {
     // Iterating through responses.
