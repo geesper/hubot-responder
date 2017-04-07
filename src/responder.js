@@ -83,8 +83,7 @@ module.exports = function(robot) {
             if (blacklist.indexOf(room) === -1) {
               // At this point the message matches (not exactly) and is in the whitelist and not in the blacklist,
               // Let's check for exact match and then reply or send as necessary.
-              if ((checks[i].exact_match && checks[i].match === said) || (checks[i].exact_match === false)) { 
-                console.log(checks[i].match[comment_match]);
+              if ((checks[i].exact_match && checks[i].match.toLowerCase() === said.toLowerCase()) || (checks[i].exact_match === false)) { 
                 if (checks[i].at_user) {
                   msg.reply(SendRandom(checks[i].responses));
                 } else {
