@@ -1,17 +1,18 @@
-//   A hubot script that does the things
+//   A web-based hubot response manager intended to allow users to add all their memes and silly
+//   responses without needing to write javascript.
 //
 // Configuration:
-//   LIST_OF_ENV_VARS_TO_SET
+//
 //
 // Commands:
-//   hubot hello - <what the respond trigger does>
-//   orly - <what the hear trigger does>
+//   roomid - Displays the id for the room
+//   roomid <room name> - Displays the id for the target room
 //
 // Notes:
-//   <optional notes required for the script>
+//   This plugin requires ejs be loaded into hubot.
 //
 // Author:
-//   /bin/sh: 1: git: not found[@<org>]
+//   Mark Webb <markwebbmn@gmail.com>
 
 var path = require('path');
 
