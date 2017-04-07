@@ -1,7 +1,7 @@
 {
   "name": "hubot-responder",
   "description": "Hubot script that makes customizing simple responses available via a web front-end.",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "author": "Mark Webb",
   "license": "MIT",
   "keywords": [
