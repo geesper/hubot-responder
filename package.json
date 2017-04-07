@@ -1,25 +1,25 @@
 {
   "name": "hubot-responder",
   "description": "Hubot script that makes customizing simple responses available via a web front-end.",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "author": "Mark Webb",
   "license": "MIT",
-
-  "keywords": ["hubot","hubot-scripts", "responder", "hubot-responder"],
-
+  "keywords": [
+    "hubot",
+    "hubot-scripts",
+    "responder",
+    "hubot-responder"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/geesper/hubot-responder.git"
   },
-
   "bugs": {
     "url": "https://github.com/hubot-scripts/hubot-responder/issues"
   },
-
   "dependencies": {
     "coffee-script": "~1.6"
   },
-
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
@@ -30,9 +30,7 @@
     "matchdep": "~0.1.2",
     "grunt-contrib-watch": "~0.5.3"
   },
-
   "main": "index.coffee",
-
   "scripts": {
     "test": "grunt test"
   }
