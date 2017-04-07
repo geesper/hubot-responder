@@ -76,7 +76,7 @@ module.exports = function(robot) {
       whitelist = robot.brain.get("hubot-responses-room-filters").whitelist;
       checks = robot.brain.get("hubot-responses").messages;
       for (i = 0, len = checks.length; i < len; i++) {
-        comment_match = said.indexOf(checks[i].match);
+        comment_match = said.toLowerCase().indexOf(checks[i].match.toLowerCase());
         if (comment_match !== -1) {
           if (whitelist.indexOf(room) !== -1 || whitelist[0] === '*') {
             if (blacklist.indexOf(room) === -1) {
@@ -144,7 +144,6 @@ module.exports = function(robot) {
     }
     value = { "blacklist" : blacklist_rooms, "whitelist" : whitelist_rooms };
     robot.brain.set("hubot-responses-room-filters", value);
-    //res.send('Room list successfully updated.<meta http-equiv="refresh" content="1;url=/configuration" />');
     rooms = robot.brain.get("hubot-responses-room-filters");
     res.render('configuration', { title: 'Configuration', rooms, page: 'configuration', success: true });
   });
@@ -200,7 +199,6 @@ module.exports = function(robot) {
             }
         }
         return res.redirect('/list');
-        return res.end("Success");
     } else {
        return res.end("Bad request sent -- missing required fields or invalid fields used!");
     }

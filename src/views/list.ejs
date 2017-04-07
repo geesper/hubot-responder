@@ -4,7 +4,7 @@
 <tr>
   <th class="col-xs-1"></th>
   <th class="col-xs-3">Match</th>
-  <th class="col-xs-2">Match Exact</th>
+  <th class="col-xs-2">Only Match These Words</th>
   <th class="col-xs-2">Reply @ User</th>
   <th class="col-xs-4">Response(s)</th>
 </tr>
@@ -18,7 +18,7 @@
       <%= messagelist[i].match %>
     </td>
     <td>
-      <% if (messagelist[i].match_exact) { %>
+      <% if (messagelist[i].exect_match) { %>
         Yes
       <% } else { %>
         No
